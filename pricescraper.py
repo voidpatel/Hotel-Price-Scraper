@@ -3,7 +3,6 @@ import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from smtplib import SMTP
-from weakref import ProxyTypes
 
 import mysql.connector
 import requests
