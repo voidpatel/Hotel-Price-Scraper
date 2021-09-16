@@ -14,10 +14,10 @@ from selectorlib.formatter import Formatter
 
 # establishing connection with AWS RDS(mysql)
 con = mysql.connector.connect(
-    host="aws-db.ckyhfbaaoiq3.us-east-2.rds.amazonaws.com",
-    user="admin",
-    password="jjjjjjjj",
-    database="atascadero_prices",
+    host="AWS RDS database Endpoint",
+    user="your username",
+    password="your password",
+    database="database name",
     port=3306
 )
 
@@ -151,8 +151,8 @@ if latest_price.count('-') < len(latest_price):
         # using MIME to send html data
         message = MIMEMultipart()
         message['Subject'] = 'ALERT!!!: Motel prices around you has changed!'
-        message['From'] = 'neelpatel9793work@gmail.com'
-        message['To'] = 'neelpatel9793work@gmail.com'
+        message['From'] = 'yourusername@gmail.com'   #input your gmail id
+        message['To'] = 'yourusername@gmail.com'     #input your own gmail or any business gmail id
 
         body_content = body
         message.attach(MIMEText(messageHTML, "html"))
@@ -161,7 +161,7 @@ if latest_price.count('-') < len(latest_price):
 
         server = SMTP('smtp.gmail.com', 587)
         server.starttls()
-        server.login(message['From'], '8866534161Pnn')
+        server.login(message['From'], 'yourpassword')
         server.sendmail(message['From'], message['To'], msg_body)
         server.quit()
 
