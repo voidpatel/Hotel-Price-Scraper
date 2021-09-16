@@ -1,0 +1,15 @@
+hotels:
+  css: div.sr_item
+  xpath: null
+  multiple: true
+  type: Text
+  children:
+    name:
+      css: span.sr-hotel__name
+      xpath: null
+      type: Text
+    price:
+      css: div.bui-price-display__value
+      xpath: null
+      type: Text
+      format: Price
